@@ -1,10 +1,5 @@
 import os
 
-
-
-yes = ["yes", "y", "Y", "Yh", "YH", "yH"]
-no = ["no", "N", "n"]
-
 def packTotalJSONFile(pkgdimgJSON, dir):
     head = '{\n"directory":"' + dir + '",\n'   
     schema = head + '"images_list":\n    {\n' + pkgdimgJSON + '    }\n}'
@@ -13,7 +8,7 @@ def packTotalJSONFile(pkgdimgJSON, dir):
 def returnJSONSchema(ordr, name, last):
     schema = ""
     if last == True:
-        schema = '        "' + str(ordr) + '":"' + str(name) + '"\n'
+        schema = '        "' + str(ordr) +pc '":"' + str(name) + '"\n'
     else:
         schema = '        "' + str(ordr) + '":"' + str(name) + '",\n'
     return schema
