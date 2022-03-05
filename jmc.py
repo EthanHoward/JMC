@@ -2,7 +2,7 @@ import os
 
 def packTotalJSONFile(pkgdimgJSON, dir):
     head = '{\n"directory":"' + dir + '",\n'   
-    schema = head + '"images_list":\n    {\n' + pkgdimgJSON + '    }\n}'
+    schema = head + '"files_list":\n    {\n' + pkgdimgJSON + '    }\n}'
     return schema 
 
 def returnJSONSchema(ordr, name, last):
@@ -40,9 +40,9 @@ def init():
     imagelist_name = input(" --- ? ")
     if len(str(imagelist_name)) <= 2:
         imagelist_name = "META.JSON"
-        header += "\n ----IMAGE LIST NAME: " + str(imagelist_name)
+        header += "\n ----FILE LIST NAME: " + str(imagelist_name)
     elif len(str(imagelist_name)) >= 2:
-        header += "\n ----IMAGE LIST NAME: " + str(imagelist_name + ".JSON") 
+        header += "\n ----FILE LIST NAME: " + str(imagelist_name + ".JSON") 
         pass
     packaged_images_json = str('')
     imglist              = open(imagelist_name + ".JSON", 'a+')
